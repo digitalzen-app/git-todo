@@ -3,17 +3,17 @@
   "displayName": "Git Branch TODO",
   "description": "Modern branch-specific TODO lists stored in Git branch descriptions with drag & drop, inline editing, and smart error handling",
   "version": "1.0.0",
-  "publisher": "your-publisher-name",
-  "author": "Your Name <your.email@example.com>",
+  "publisher": "digitalzen-app",
+  "author": "digitalzen-app",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/git-branch-todo.git"
+    "url": "git+https://github.com/digitalzen-app/git-todo.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/git-branch-todo/issues"
+    "url": "https://github.com/digitalzen-app/git-todo/issues"
   },
-  "homepage": "https://github.com/your-username/git-branch-todo#readme",
+  "homepage": "https://github.com/digitalzen-app/git-todo#readme",
   "keywords": [
     "git",
     "todo",
@@ -53,6 +53,9 @@
   },
   "main": "./out/extension.js",
   "scripts": {
+    "package": "mkdir -p dist && vsce package -o ./dist/git-branch-todo.vsix",
+    "publish": "vsce publish",
+    "install-local": "vsce install ./dist/git-branch-todo.vsix",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
@@ -61,12 +64,13 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.80.0",
     "@types/node": "latest",
-    "typescript": "^5.0.0",
-    "eslint": "^8.0.0"
+    "@types/vscode": "^1.74.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@vscode/vsce": "^3.6.0",
     "acorn": "^8.15.0",
     "acorn-jsx": "^5.3.2",
     "ajv": "^6.12.6",

@@ -26,10 +26,27 @@ A modern VS Code extension that lets you manage TODO lists for each Git branch u
 
 ### Installation
 
+#### From VS Code Marketplace
+
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
 3. Search for "Git Branch TODO"
 4. Click Install
+
+#### Local Installation from Source
+
+1. Clone and build the extension:
+   ```bash
+   git clone https://github.com/digitalzen-app/git-todo.git
+   cd git-todo
+   npm install
+   npm run package
+   ```
+
+2. Install the generated `.vsix` file:
+   ```bash
+   code --install-extension dist/git-branch-todo.vsix
+   ```
 
 ### Usage
 
